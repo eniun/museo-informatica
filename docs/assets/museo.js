@@ -6,13 +6,14 @@ const aplicarApariencia = () => {
   const oscuro = apariencia === "oscuro" || (apariencia === "automatico" && preferenciaOscura.matches);
   document.documentElement.dataset.tema = oscuro ? "oscuro" : "claro";
   document.querySelector('meta[name="theme-color"]').content = oscuro ? "#0b0e14" : "#ffffff";
-  document.querySelectorAll("[data-apariencia]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.apariencia === apariencia)));
+  document.getElementById("apariencia").value = apariencia;
+  document.querySelector(".apariencia").title = `Tema: ${apariencia === "automatico" ? "automático" : apariencia}. Cambiar tema`;
 };
-document.querySelectorAll("[data-apariencia]").forEach((b) => b.addEventListener("click", () => {
-  apariencia = b.dataset.apariencia;
+document.getElementById("apariencia").addEventListener("change", (e) => {
+  apariencia = e.target.value;
   try { localStorage.setItem("museo-apariencia", apariencia); } catch {}
   aplicarApariencia();
-}));
+});
 preferenciaOscura.addEventListener("change", aplicarApariencia);
 aplicarApariencia();
 

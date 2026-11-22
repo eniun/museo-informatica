@@ -119,6 +119,9 @@ if (galeria && visor) {
     indice = (i + fotos.length) % fotos.length;
     img.src = fotos[indice].src;
     img.alt = fotos[indice].alt;
+    const giro = fotos[indice].giro || 0;
+    img.style.setProperty("--giro-foto", `${giro}deg`);
+    img.classList.toggle("foto-giro-lateral", Math.abs(giro) % 180 === 90);
     pie.textContent = fotos[indice].pie;
     contador.textContent = `${indice + 1} / ${fotos.length}`;
   };

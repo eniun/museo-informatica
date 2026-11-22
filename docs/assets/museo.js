@@ -7,6 +7,7 @@ const aplicarApariencia = () => {
   document.documentElement.dataset.tema = oscuro ? "oscuro" : "claro";
   document.querySelector('meta[name="theme-color"]').content = oscuro ? "#0b0e14" : "#ffffff";
   document.getElementById("apariencia").value = apariencia;
+  document.querySelector(".apariencia").dataset.modo = apariencia;
   document.querySelector(".apariencia").title = `Tema: ${apariencia === "automatico" ? "automático" : apariencia}. Cambiar tema`;
 };
 document.getElementById("apariencia").addEventListener("change", (e) => {
@@ -61,7 +62,14 @@ document.querySelectorAll(".reto__boton").forEach((boton) =>
     boton.setAttribute("aria-expanded", String(abrir));
     boton.textContent = abrir ? "Ocultar respuesta" : "Ver respuesta";
     if (abrir) boton.closest(".reto").classList.add("is-hecho");
-    if (marcador) marcador.textContent = document.querySelectorAll(".reto.is-hecho").length;
+    if (marcador) {
+      const hechos = document.querySelectorAll(".reto.is-hecho").length;
+      const total = document.querySelectorAll(".reto").length;
+      marcador.textContent = hechos;
+      const estado = document.querySelector(".retos__estado");
+      if (estado) estado.textContent = hechos === total ? "Exploración completada" : "Exploración en curso";
+      document.querySelector(".retos__marcador").classList.toggle("is-completo", hechos === total);
+    }
   })
 );
 
@@ -123,7 +131,7 @@ if (galeria && visor) {
     img.style.setProperty("--giro-foto", `${giro}deg`);
     img.classList.toggle("foto-giro-lateral", Math.abs(giro) % 180 === 90);
     pie.textContent = fotos[indice].pie;
-    contador.textContent = `${indice + 1} / ${fotos.length}`;
+    contador.textContent = `FOTO ${String(indice + 1).padStart(2, "0")}/${String(fotos.length).padStart(2, "0")}`;
   };
 
   galeria.querySelectorAll(".galeria__boton").forEach((b) =>
@@ -282,7 +290,7 @@ if (busqueda) {
     caja.innerHTML = resultados.length
       ? resultados
           .map((d, i) => `<li role="option" id="res-${i}" aria-selected="${i === elegido}"><a href="${BASE}/${d.n}/">
-              <img src="${d.f}" alt="" loading="lazy" style="--color:${d.k}"><span><strong>${d.t}</strong><small>${d.n} · ${d.c} · ${d.a}</small></span></a></li>`)
+              <img src="${d.f}" alt="" loading="lazy" style="--color:${d.k}"><span><strong>${d.t}</strong><small>${d.n} · ${d.c}${d.a ? ` · ${d.a}` : ""}</small></span></a></li>`)
           .join("")
       : '<li class="busqueda__vacio">No hay ninguna pieza con ese texto.</li>';
     caja.hidden = false;

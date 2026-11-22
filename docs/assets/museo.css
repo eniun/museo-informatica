@@ -1350,3 +1350,9 @@ html:has(.visor[open]) { overflow: hidden; }
 }
 .pagina-ficha .vistas button, .pagina-ficha .parte { min-height: 44px; }
 .pagina-ficha .punto::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; }
+@media (min-width: 720px) {
+  .comparacion:not(:has(.comparacion__factor)) { grid-template-columns: minmax(0, 1fr); }
+  .comparacion:not(:has(.comparacion__factor)) header { grid-column: 1; grid-row: auto; margin-bottom: 1rem; }
+  .comparacion:not(:has(.comparacion__factor)) .comparacion__fila,
+  .seccion .comparacion:not(:has(.comparacion__factor)) p { grid-column: 1; }
+}

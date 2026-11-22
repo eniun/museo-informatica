@@ -1356,3 +1356,9 @@ html:has(.visor[open]) { overflow: hidden; }
   .comparacion:not(:has(.comparacion__factor)) .comparacion__fila,
   .seccion .comparacion:not(:has(.comparacion__factor)) p { grid-column: 1; }
 }
+.pieza-id {
+  font: 600 0.875rem/1.5 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}

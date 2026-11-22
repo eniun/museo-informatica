@@ -102,6 +102,7 @@ const alDesplazar = () => {
 };
 if (secciones.length) {
   window.addEventListener("scroll", alDesplazar, { passive: true });
+  window.addEventListener("resize", alDesplazar);
   alDesplazar();
 }
 

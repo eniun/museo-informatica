@@ -19,7 +19,7 @@
   <link rel="icon" href="/museo-informatica/assets/favicon.svg?v=57c0806d83" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="/museo-informatica/assets/apple-touch-icon.png?v=a319b9cbcc" sizes="180x180">
   <link rel="manifest" href="/museo-informatica/assets/site.webmanifest?v=eb7d02f233">
-  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=cf7613f55b">
+  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=4ddb55e074">
   <script src="/museo-informatica/assets/museo.js?v=e8416fe554" defer></script>
 </head>
 <body class="pagina-ficha">
@@ -178,8 +178,14 @@
     </div>
   </dialog>
 
-  <footer class="pie">
-    <p>Museo de Informática S8A · Departamento de Informática</p>
-  <label class="apariencia" title="Cambiar tema"><span class="apariencia__interruptor" aria-hidden="true"><span></span></span><select aria-label="Tema de la web" id="apariencia"><option value="claro">Claro</option><option value="oscuro">Oscuro</option><option value="automatico">Automático</option></select></label></footer>
+  <footer class="pie" aria-label="Pie del museo">
+      <div class="pie__interior">
+        <div class="pie__principal">
+          <a class="pie__marca" href="/museo-informatica/"><img src="/museo-informatica/assets/favicon.svg?v=57c0806d83" width="36" height="36" alt=""><span>Museo de Informática S8A</span></a>
+          <nav class="pie__nav" aria-label="Navegación del pie"><a href="/museo-informatica/">Inicio</a><a href="/museo-informatica/inventario/">Colección</a><a href="#contenido">Volver arriba</a></nav>
+        </div>
+        <div class="pie__inferior"><p>Departamento de Informática · Museo del instituto</p><div class="pie__tema"><span>Tema</span><label class="apariencia" title="Cambiar tema"><span class="apariencia__interruptor" aria-hidden="true"><span></span></span><select aria-label="Tema de la web" id="apariencia"><option value="claro">Claro</option><option value="oscuro">Oscuro</option><option value="automatico">Automático</option></select></label></div></div>
+      </div>
+    </footer>
 </body>
 </html>

@@ -19,7 +19,7 @@
   <link rel="icon" href="/museo-informatica/assets/favicon.svg?v=57c0806d83" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="/museo-informatica/assets/apple-touch-icon.png?v=a319b9cbcc" sizes="180x180">
   <link rel="manifest" href="/museo-informatica/assets/site.webmanifest?v=eb7d02f233">
-  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=cf7613f55b">
+  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=4ddb55e074">
   <script src="/museo-informatica/assets/museo.js?v=e8416fe554" defer></script>
 </head>
 <body class="pagina-inicio">
@@ -54,14 +54,14 @@
         <p class="inicio-bienvenida__intro">Descubre cómo han cambiado los ordenadores a través de las piezas del museo del instituto.</p>
         <a class="boton" href="/museo-informatica/inventario/">Ver la colección</a>
         <p class="inicio-bienvenida__dato">17 piezas para descubrir cómo hemos llegado hasta aquí.</p>
+        <div class="inicio-visita"><p><strong>¿Estás en el museo?</strong> Escanea el QR de cualquier pieza para descubrirla.</p><p>Observa la pieza, compara tecnologías y responde los retos antes de consultar las respuestas.</p></div>
       </div>
       <a class="inicio-protagonista" href="/museo-informatica/001/" aria-label="Descubrir el IBM Personal Computer 5150">
         <div class="inicio-protagonista__rotulo"><span class="pieza-id">Pieza 001</span><span>1981</span></div>
-        <div class="inicio-protagonista__foto"><img class="inicio-protagonista__completa" src="/museo-informatica/images/portada/ibm-completo-transparente.png?v=1763c68843" width="317" height="318" alt="IBM del museo con monitor, unidad central y teclado completo, sin fondo." loading="eager" decoding="async"></div>
-        <div class="inicio-protagonista__pie"><h2>IBM Personal Computer 5150</h2><p>El ordenador que popularizó el PC</p><p class="inicio-protagonista__pregunta">¿Cuántos disquetes necesitarías para guardar una foto?</p><span>Descubrir esta pieza</span></div>
+        <div class="inicio-protagonista__foto"><img class="inicio-protagonista__completa" src="/museo-informatica/images/portada/ibm-completo-transparente.webp?v=9e2f6713bd" width="317" height="318" alt="IBM Personal Computer 5150 del museo, con monitor, unidad central y teclado completo." loading="eager" fetchpriority="high" decoding="async"></div>
+        <div class="inicio-protagonista__pie"><h2>IBM Personal Computer 5150</h2><p>El ordenador que popularizó el PC</p><p class="inicio-protagonista__pregunta">¿Cuántos disquetes de este ordenador harían falta para guardar una foto digital actual?</p><span>Descubrir esta pieza</span></div>
       </a>
     </section>
-    <div class="inicio-visita"><p><strong>¿Estás en el museo?</strong> Escanea el QR de cualquier pieza para descubrirla.</p><p>Observa la pieza, compara tecnologías y responde los retos antes de consultar las respuestas.</p></div>
     <section class="inicio-colecciones" aria-labelledby="t-explorar">
       <div class="inicio-colecciones__cabecera"><h2 id="t-explorar">¿Por dónde quieres empezar?</h2><a href="/museo-informatica/inventario/">Ver las 17 piezas</a></div>
       <div class="inicio-accesos"><a class="inicio-acceso" href="/museo-informatica/inventario/?coleccion=Ordenadores">
@@ -76,6 +76,14 @@
         </a></div>
     </section>
   </main>
-  <footer class="pie"><p>Museo de Informática S8A · Departamento de Informática</p><label class="apariencia" title="Cambiar tema"><span class="apariencia__interruptor" aria-hidden="true"><span></span></span><select aria-label="Tema de la web" id="apariencia"><option value="claro">Claro</option><option value="oscuro">Oscuro</option><option value="automatico">Automático</option></select></label></footer>
+  <footer class="pie" aria-label="Pie del museo">
+      <div class="pie__interior">
+        <div class="pie__principal">
+          <a class="pie__marca" href="/museo-informatica/"><img src="/museo-informatica/assets/favicon.svg?v=57c0806d83" width="36" height="36" alt=""><span>Museo de Informática S8A</span></a>
+          <nav class="pie__nav" aria-label="Navegación del pie"><a href="/museo-informatica/">Inicio</a><a href="/museo-informatica/inventario/">Colección</a><a href="#contenido">Volver arriba</a></nav>
+        </div>
+        <div class="pie__inferior"><p>Departamento de Informática · Museo del instituto</p><div class="pie__tema"><span>Tema</span><label class="apariencia" title="Cambiar tema"><span class="apariencia__interruptor" aria-hidden="true"><span></span></span><select aria-label="Tema de la web" id="apariencia"><option value="claro">Claro</option><option value="oscuro">Oscuro</option><option value="automatico">Automático</option></select></label></div></div>
+      </div>
+    </footer>
 </body>
 </html>

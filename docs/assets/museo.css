@@ -35,8 +35,7 @@
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
+:root[data-tema="oscuro"] {
     --fondo: #0b0e14;
     --superficie: #141a24;
     --superficie-2: #19202c;
@@ -52,7 +51,6 @@
     --vitrina-2: #161d2a;
     --sombra: 0 1px 2px rgb(0 0 0 / 0.3), 0 10px 30px rgb(0 0 0 / 0.3);
     color-scheme: dark;
-  }
 }
 *,
 *::before,
@@ -1239,11 +1237,9 @@ h2 {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230173c2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2Z'/%3E%3C/svg%3E")
     center / 1.25rem no-repeat;
 }
-@media (prefers-color-scheme: dark) {
-  .curiosidades li::before {
+:root[data-tema="oscuro"] .curiosidades li::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a2d3fb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2Z'/%3E%3C/svg%3E");
   }
-}
 .curiosidades li p { padding-top: 0.35rem; }
 .menu a {
   display: block;
@@ -1303,3 +1299,9 @@ h2 {
 }
 .filtro--color:hover { border-color: var(--color); }
 .filtro--color[aria-pressed="true"] { background: var(--color); border-color: var(--color); color: #fff; }
+.apariencia { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.3rem; margin-top: 1rem; font-size: 0.9rem; }
+.apariencia span { margin-right: 0.3rem; }
+.apariencia button { font: inherit; color: var(--suave); background: transparent; border: 1px solid transparent; border-radius: 999px; padding: 0.55rem 0.75rem; min-height: 44px; cursor: pointer; }
+.apariencia button:hover { color: var(--acento-fuerte); background: var(--acento-suave); }
+.apariencia button[aria-pressed="true"] { color: var(--acento-fuerte); background: var(--acento-suave); border-color: var(--acento); }
+.apariencia button:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }

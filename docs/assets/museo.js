@@ -1,3 +1,21 @@
+const preferenciaOscura = window.matchMedia("(prefers-color-scheme: dark)");
+let apariencia = "claro";
+try { apariencia = localStorage.getItem("museo-apariencia") || "claro"; } catch {}
+if (!["claro", "oscuro", "automatico"].includes(apariencia)) apariencia = "claro";
+const aplicarApariencia = () => {
+  const oscuro = apariencia === "oscuro" || (apariencia === "automatico" && preferenciaOscura.matches);
+  document.documentElement.dataset.tema = oscuro ? "oscuro" : "claro";
+  document.querySelector('meta[name="theme-color"]').content = oscuro ? "#0b0e14" : "#ffffff";
+  document.querySelectorAll("[data-apariencia]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.apariencia === apariencia)));
+};
+document.querySelectorAll("[data-apariencia]").forEach((b) => b.addEventListener("click", () => {
+  apariencia = b.dataset.apariencia;
+  try { localStorage.setItem("museo-apariencia", apariencia); } catch {}
+  aplicarApariencia();
+}));
+preferenciaOscura.addEventListener("change", aplicarApariencia);
+aplicarApariencia();
+
 const pestanas = document.querySelectorAll('.vistas [role="tab"]');
 pestanas.forEach((tab) =>
   tab.addEventListener("click", () => {

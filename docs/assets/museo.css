@@ -1514,3 +1514,35 @@ html { scrollbar-gutter: stable; }
 .pie :is(a,.apariencia):focus-visible, .pie .apariencia:focus-within { outline-color: var(--toque); }
 @media (min-width: 1000px) { .pie__interior { max-width: calc(var(--ancho-total) + 48px); padding-left: 24px; padding-right: 24px; } }
 @media (max-width: 599px) { .pie__principal { align-items: flex-start; gap: 0.7rem; flex-direction: column; } .pie__inferior { align-items: center; } .pie__tema { margin-left: auto; } }
+:root:not([data-tema="oscuro"]) .vitrina,
+:root:not([data-tema="oscuro"]) .galeria,
+:root:not([data-tema="oscuro"]) .visor {
+  --vitrina: #ffffff;
+  --vitrina-2: #eef2f7;
+  --vitrina-texto: #111723;
+  --vitrina-suave: #566173;
+  --vitrina-linea: #dfe4ec;
+}
+:root:not([data-tema="oscuro"]) .vitrina {
+  background:
+    radial-gradient(70% 50% at 50% 45%, #ffffff, transparent 75%),
+    linear-gradient(180deg, #f6f8fb, #e9eef5);
+}
+@media (min-width: 640px) {
+  :root:not([data-tema="oscuro"]) .vitrina { border: 1px solid var(--linea); box-shadow: var(--sombra); }
+}
+:root:not([data-tema="oscuro"]) .vitrina .vitrina__eyebrow { color: var(--acento-fuerte); }
+:root:not([data-tema="oscuro"]) .vistas { background: rgb(16 24 40 / 0.04); }
+:root:not([data-tema="oscuro"]) .parte,
+:root:not([data-tema="oscuro"]) .parte-detalle { background: var(--superficie); }
+:root:not([data-tema="oscuro"]) .parte:hover { background: var(--acento-suave); }
+:root:not([data-tema="oscuro"]) .cartela .resumen strong { color: var(--vitrina-texto); }
+:root:not([data-tema="oscuro"]) .cartela .destacados dd { color: var(--acento-fuerte); }
+:root:not([data-tema="oscuro"]) .explorador__foto--recorte::after { background: radial-gradient(closest-side, rgb(16 24 40 / 0.22), transparent); }
+:root:not([data-tema="oscuro"]) .galeria__boton {
+  background: radial-gradient(80% 70% at 50% 40%, #ffffff, var(--vitrina-2));
+  border: 1px solid var(--linea);
+}
+:root:not([data-tema="oscuro"]) .visor .visor__cerrar:hover,
+:root:not([data-tema="oscuro"]) .visor__nav button:hover { color: var(--acento-fuerte); }
+:root:not([data-tema="oscuro"]) .parte[aria-pressed="true"] { background: var(--vitrina-texto); }

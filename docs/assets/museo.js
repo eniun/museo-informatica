@@ -114,6 +114,14 @@ if (secciones.length) {
   alDesplazar();
 }
 
+const abrirDesplegable = (id) => {
+  const desplegable = id && document.querySelector(`#${CSS.escape(id)} > details.desplegable`);
+  if (desplegable) desplegable.open = true;
+};
+enlaces.forEach((a) => a.addEventListener("click", () => abrirDesplegable(a.dataset.seccion)));
+window.addEventListener("hashchange", () => abrirDesplegable(location.hash.slice(1)));
+abrirDesplegable(location.hash.slice(1));
+
 const galeria = document.querySelector(".galeria");
 const visor = document.querySelector(".visor");
 if (galeria && visor) {

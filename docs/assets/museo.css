@@ -739,12 +739,6 @@ h2 {
 .recorrido span { color: var(--suave); opacity: 0.7; }
 .recorrido small { font-weight: 500; color: var(--suave); font-size: 0.78rem; }
 .recorrido__siguiente { text-align: right; }
-.recorrido .recorrido__todas {
-  grid-column: 1 / -1;
-  text-align: center;
-  color: var(--acento-fuerte);
-  font-weight: 650;
-}
 .pie { max-width: 1160px; margin: 0 auto; padding: 2rem 16px 3rem; color: var(--suave); font-size: 0.85rem; text-align: center; }
 .visualmente-oculto {
   position: absolute;

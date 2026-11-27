@@ -19,8 +19,8 @@
   <link rel="icon" href="/museo-informatica/assets/favicon.svg?v=57c0806d83" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="/museo-informatica/assets/apple-touch-icon.png?v=a319b9cbcc" sizes="180x180">
   <link rel="manifest" href="/museo-informatica/assets/site.webmanifest?v=eb7d02f233">
-  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=28680afab0">
-  <script src="/museo-informatica/assets/museo.js?v=e06c9f6998" defer></script>
+  <link rel="stylesheet" href="/museo-informatica/assets/museo.css?v=37ddc570ca">
+  <script src="/museo-informatica/assets/museo.js?v=9bb778676b" defer></script>
 </head>
 <body class="pagina-inicio">
 
@@ -34,7 +34,7 @@
         <button type="button" class="busqueda__abrir" aria-label="Buscar pieza" aria-expanded="false" aria-controls="busqueda-form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
         <form class="busqueda__form" id="busqueda-form" role="search" action="/museo-informatica/coleccion/" autocomplete="off" hidden>
           <label class="visualmente-oculto" for="q">Buscar pieza</label>
-          <input class="busqueda__campo" type="search" id="q" name="q" placeholder="Buscar pieza…"
+          <input class="busqueda__campo" type="search" id="q" name="q" placeholder="buscar pieza…"
                  aria-controls="busqueda-resultados" aria-expanded="false" aria-autocomplete="list">
           <button type="button" class="busqueda__cerrar" aria-label="Cerrar el buscador">×</button>
           <ul class="busqueda__resultados" id="busqueda-resultados" role="listbox" hidden></ul>
@@ -51,32 +51,480 @@
         <p class="seccion__eyebrow">Museo del instituto</p>
         <h1 id="t-portada">Museo de<br>Informática <span>S8A</span></h1>
         <p class="inicio-bienvenida__lema">Así eran los ordenadores antes de que todo cupiera en tu bolsillo.</p>
-        <p class="inicio-bienvenida__intro">Descubre cómo han cambiado los ordenadores a través de las piezas del museo del instituto.</p>
-        <a class="boton" href="/museo-informatica/coleccion/">Ver la colección</a>
-        <p class="inicio-bienvenida__dato">38 piezas para descubrir cómo hemos llegado hasta aquí.</p>
-        <div class="inicio-visita"><p><strong>¿Estás en el museo?</strong> Escanea el QR de cualquier pieza para descubrirla.</p><p>Observa la pieza, compara tecnologías y responde los retos antes de consultar las respuestas.</p></div>
+        <a class="boton" href="/museo-informatica/coleccion/">Ver las 38 piezas</a>
+        <nav class="inicio-colecciones" aria-labelledby="t-explorar">
+          <h2 id="t-explorar" class="visualmente-oculto">Colecciones</h2>
+          <div class="filtros__grupo"><a class="filtro filtro--color" style="--color:#0173c2" href="/museo-informatica/coleccion/?coleccion=Ordenadores">Ordenadores<span>1</span></a><a class="filtro filtro--color" style="--color:#e8590c" href="/museo-informatica/coleccion/?coleccion=Procesadores y refrigeración">Procesadores y refrigeración<span>4</span></a><a class="filtro filtro--color" style="--color:#7a5230" href="/museo-informatica/coleccion/?coleccion=Memoria">Memoria<span>3</span></a><a class="filtro filtro--color" style="--color:#2f9e44" href="/museo-informatica/coleccion/?coleccion=Placas base">Placas base<span>3</span></a><a class="filtro filtro--color" style="--color:#9c36b5" href="/museo-informatica/coleccion/?coleccion=Tarjetas gráficas">Tarjetas gráficas<span>14</span></a><a class="filtro filtro--color" style="--color:#0c8599" href="/museo-informatica/coleccion/?coleccion=Almacenamiento">Almacenamiento<span>4</span></a><a class="filtro filtro--color" style="--color:#d6336c" href="/museo-informatica/coleccion/?coleccion=Tarjetas de expansión">Tarjetas de expansión<span>9</span></a></div>
+        </nav>
+        <p class="inicio-visita"><strong>¿Estás en el museo?</strong> Escanea el QR de una pieza para ver su ficha.</p>
       </div>
-      <a class="inicio-protagonista" href="/museo-informatica/001/" aria-label="Descubrir el IBM Personal Computer 5150">
-        <div class="inicio-protagonista__rotulo"><span class="pieza-id">Pieza 001</span><span>1981</span></div>
-        <div class="inicio-protagonista__foto"><img class="inicio-protagonista__completa" src="/museo-informatica/images/portada/ibm-completo-transparente.webp?v=9e2f6713bd" width="317" height="318" alt="IBM Personal Computer 5150 del museo, con monitor, unidad central y teclado completo." loading="eager" fetchpriority="high" decoding="async"></div>
-        <div class="inicio-protagonista__pie"><h2>IBM Personal Computer 5150</h2><p>El ordenador que popularizó el PC</p><p class="inicio-protagonista__pregunta">¿Cuántos disquetes de este ordenador harían falta para guardar una foto digital actual?</p><span>Descubrir esta pieza</span></div>
-      </a>
+      <section class="carrusel" aria-roledescription="carrusel" aria-labelledby="t-carrusel">
+        <h2 id="t-carrusel" class="visualmente-oculto">Piezas del museo</h2>
+        <div class="carrusel__pista"><div class="carrusel__pieza is-activa" role="group" aria-roledescription="pieza" aria-label="1 de 38: IBM Personal Computer 5150">
+          <a class="carrusel__enlace" href="/museo-informatica/001/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 001</span><span>1981</span></span>
+            <span class="carrusel__foto" style="--color:#0173c2"><img src="/museo-informatica/images/piezas/001/frontal-800.webp" fetchpriority="high" width="1400" height="1288" alt="IBM PC 5150 encendido, con el monitor de fósforo verde sobre la unidad central y el teclado delante." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#0173c2">Ordenadores</span>
+              <h3>IBM Personal Computer 5150</h3>
+              <p class="carrusel__subtitulo">El ordenador que popularizó el PC</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca en el teclado las teclas de función. ¿Dónde están y cuántas hay?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="2 de 38: Intel Pentium III" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/002/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 002</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#e8590c"><img data-src="/museo-informatica/images/piezas/002/frente-800.webp" width="1400" height="671" alt="Cartucho negro del procesador Intel Pentium III visto de frente, con el logotipo de Intel, el rótulo pentium III y un holograma." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#e8590c">Procesadores y refrigeración</span>
+              <h3>Intel Pentium III</h3>
+              <p class="carrusel__subtitulo">Un procesador con forma de cartucho</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Mira el borde dorado del cartucho. ¿Por qué crees que la fila de contactos está partida en dos?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="3 de 38: Disco duro NEC D5146H" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/003/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 003</span><span>1985</span></span>
+            <span class="carrusel__foto" style="--color:#0c8599"><img data-src="/museo-informatica/images/piezas/003/arriba-800.webp" width="1400" height="1905" alt="Disco duro NEC D5146H visto desde arriba, con un aviso amarillo, etiquetas de NCR y NEC y una tabla en blanco para anotar sectores defectuosos." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#0c8599">Almacenamiento</span>
+              <h3>Disco duro NEC D5146H</h3>
+              <p class="carrusel__subtitulo">40 MB que había que tratar con mucho cuidado</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el aviso amarillo. ¿Qué no se debe girar y por qué?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="4 de 38: HP CD-Writer Plus C4381A" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/004/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 004</span><span>1998</span></span>
+            <span class="carrusel__foto" style="--color:#0c8599"><img data-src="/museo-informatica/images/piezas/004/delante-800.webp" width="1400" height="973" alt="Grabadora de CD externa HP CD-Writer Plus de color beis, con la bandeja, el logotipo MultiRead, la toma de auriculares y el botón azul de expulsar." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#0c8599">Almacenamiento</span>
+              <h3>HP CD-Writer Plus C4381A</h3>
+              <p class="carrusel__subtitulo">Grabar un CD por el puerto de la impresora</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Mira la parte de atrás. Si la grabadora ocupaba el puerto del ordenador, ¿dónde se conectaba la impresora?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="5 de 38: Disco duro Seagate ST-251-1" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/005/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 005</span><span>Años 80</span></span>
+            <span class="carrusel__foto" style="--color:#0c8599"><img data-src="/museo-informatica/images/piezas/005/arriba-800.webp" width="1400" height="1916" alt="Disco duro Seagate de color aluminio visto desde arriba, con la etiqueta ST-251-1 y una pegatina de advertencia." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#0c8599">Almacenamiento</span>
+              <h3>Disco duro Seagate ST-251-1</h3>
+              <p class="carrusel__subtitulo">El disco duro de los PC/AT</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el modelo en la etiqueta. ¿Qué nombre aparece?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="6 de 38: Placa base 386 con AMD Am386DX" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/006/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 006</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#2f9e44"><img data-src="/museo-informatica/images/piezas/006/placa-800.webp" width="823" height="550" alt="Placa base verde con siete ranuras negras, ocho zócalos de memoria blancos y un procesador AMD." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#2f9e44">Placas base</span>
+              <h3>Placa base 386 con AMD Am386DX</h3>
+              <p class="carrusel__subtitulo">Treinta y dos bits para el PC</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el zócalo cuadrado vacío junto al procesador. ¿Qué pieza faltaba?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="7 de 38: Placa base 486 con bus VESA" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/007/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 007</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#2f9e44"><img data-src="/museo-informatica/images/piezas/007/placa-800.webp" width="1400" height="1250" alt="Placa base verde con ranuras ISA negras, tres ranuras VLB marrones, zócalos de memoria blancos y un zócalo de procesador vacío." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#2f9e44">Placas base</span>
+              <h3>Placa base 486 con bus VESA</h3>
+              <p class="carrusel__subtitulo">Ranuras rápidas para la tarjeta gráfica</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el zócalo cuadrado. ¿Qué falta en esta placa?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="8 de 38: Placa base Pentium EXP8551" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/008/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 008</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#2f9e44"><img data-src="/museo-informatica/images/piezas/008/placa-800.webp" width="1400" height="1094" alt="Placa base con un procesador Intel Pentium, cuatro ranuras PCI blancas, cuatro ISA y cuatro zócalos de memoria." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#2f9e44">Placas base</span>
+              <h3>Placa base Pentium EXP8551</h3>
+              <p class="carrusel__subtitulo">Llega el bus PCI</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el nombre del zócalo del procesador.</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="9 de 38: Tarjeta gráfica Cirrus Logic CL-GD5402" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/009/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 009</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/009/tarjeta-800.webp" width="1400" height="812" alt="Tarjeta gráfica amarilla con un chip Cirrus Logic, cuatro chips de memoria y un conector VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Tarjeta gráfica Cirrus Logic CL-GD5402</h3>
+              <p class="carrusel__subtitulo">Color VGA para un PC de 16 bits</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el chip más grande. ¿Qué empresa lo fabricó?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="10 de 38: Tarjeta gráfica Trident 7343 VLB" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/010/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 010</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/010/tarjeta-800.webp" width="1400" height="643" alt="Tarjeta gráfica verde muy larga con un chip Trident, varias filas de chips de memoria y un conector VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Tarjeta gráfica Trident 7343 VLB</h3>
+              <p class="carrusel__subtitulo">Una gráfica larga para un bus rápido</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta los tramos de contactos dorados del borde. ¿Cuántos hay?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="11 de 38: Tarjeta gráfica AGP de Diamond" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/011/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 011</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/011/tarjeta-800.webp" width="1400" height="941" alt="Tarjeta gráfica verde con un disipador negro en el centro, ocho chips de memoria EtronTech y un conector VGA azul." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Tarjeta gráfica AGP de Diamond</h3>
+              <p class="carrusel__subtitulo">Una ranura dedicada a los gráficos</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la marca y el año de copyright en la placa.</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="12 de 38: NVIDIA GeForce 8500 GT" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/012/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 012</span><span>2007</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/012/tarjeta-800.webp" width="1400" height="977" alt="Tarjeta gráfica verde con un ventilador redondo sobre un disipador de aletas, chips de memoria y conectores VGA y DVI." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>NVIDIA GeForce 8500 GT</h3>
+              <p class="carrusel__subtitulo">Tres salidas de vídeo y refrigeración con ventilador</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta las salidas de vídeo del soporte metálico.</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="13 de 38: Tarjeta Magic Combo CT-6190S" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/013/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 013</span><span>Años 80</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/013/tarjeta-800.webp" width="1400" height="1224" alt="Tarjeta verde Twinhead Magic Combo CT-6190S con contactos ISA y conectores exteriores de 9 y 25 contactos." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Tarjeta Magic Combo CT-6190S</h3>
+              <p class="carrusel__subtitulo">Puertos serie y paralelo en una sola tarjeta</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta los contactos de cada conector. ¿Cuál tiene más?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="14 de 38: Adaptec AVA-2904" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/014/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 014</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/014/tarjeta-800.webp" width="1400" height="507" alt="Tarjeta PCI pequeña con un cable plano gris muy largo con varios conectores." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Adaptec AVA-2904</h3>
+              <p class="carrusel__subtitulo">Varios aparatos en un mismo cable</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿Por qué crees que el cable gris tiene varios conectores?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="15 de 38: Tarjeta de sonido Creative CT5803" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/015/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 015</span><span>Años 90</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/015/tarjeta-800.webp" width="1400" height="1323" alt="Tarjeta de sonido verde con conectores de colores, un puerto de 15 pines y varios chips." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Tarjeta de sonido Creative CT5803</h3>
+              <p class="carrusel__subtitulo">Sonido digital para Windows 98</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿Qué color tiene la salida para los altavoces?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="16 de 38: Tarjeta wifi TP-Link TL-WN751ND" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/016/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 016</span><span>Años 2010</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/016/tarjeta-800.webp" width="1400" height="1019" alt="Tarjeta verde con una etiqueta de TP-Link y una antena negra en el soporte metálico." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Tarjeta wifi TP-Link TL-WN751ND</h3>
+              <p class="carrusel__subtitulo">Internet sin cables para un ordenador de sobremesa</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿Qué velocidad máxima pone en la etiqueta?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="17 de 38: Colección de disipadores para procesador" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/017/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 017</span><span>Años 2000</span></span>
+            <span class="carrusel__foto" style="--color:#e8590c"><img data-src="/museo-informatica/images/piezas/017/coleccion-800.webp" width="1400" height="630" alt="Diez disipadores con ventilador colocados en filas sobre una mesa, algunos con pegatinas de Intel, AMD y Cooler Master." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#e8590c">Procesadores y refrigeración</span>
+              <h3>Colección de disipadores para procesador</h3>
+              <p class="carrusel__subtitulo">Diez formas de quitar el calor</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la pegatina naranja y negra de AMD. ¿Qué empresa competía con Intel fabricando procesadores?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="18 de 38: Intel i486 DX2" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/018/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 018</span><span>1992</span></span>
+            <span class="carrusel__foto" style="--color:#e8590c"><img data-src="/museo-informatica/images/piezas/018/procesador-800.webp" width="157" height="151" alt="Procesador Intel i486 DX2 cerámico oscuro con los logotipos serigrafiados y una etiqueta blanca con el número 163806." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#e8590c">Procesadores y refrigeración</span>
+              <h3>Intel i486 DX2</h3>
+              <p class="carrusel__subtitulo">El núcleo que iba al doble que la placa</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Lee el nombre impreso en el procesador. ¿Qué indica «DX2»?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="19 de 38: AMD-K6 233 MHz" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/019/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 019</span><span>1998</span></span>
+            <span class="carrusel__foto" style="--color:#e8590c"><img data-src="/museo-informatica/images/piezas/019/procesador-800.webp" width="190" height="182" alt="Procesador AMD-K6 con tapa metálica plateada en la que se leen AMD-K6-233ANR, 3.2V CORE/3.3V I/O y 9805DJNW." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#e8590c">Procesadores y refrigeración</span>
+              <h3>AMD-K6 233 MHz</h3>
+              <p class="carrusel__subtitulo">La alternativa de AMD al Pentium MMX</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca las tensiones impresas en la tapa. ¿Cuáles son?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="20 de 38: Módulos de memoria SIMM de 30 contactos" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/020/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 020</span><span>1994</span></span>
+            <span class="carrusel__foto" style="--color:#7a5230"><img data-src="/museo-informatica/images/piezas/020/modulos-800.webp" width="342" height="281" alt="Cuatro módulos de memoria SIMM verdes de 30 contactos, cada uno con una etiqueta IBM y tres chips negros." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#7a5230">Memoria</span>
+              <h3>Módulos de memoria SIMM de 30 contactos</h3>
+              <p class="carrusel__subtitulo">Cuatro módulos IBM de 1 MB</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca «1M X 9» en la etiqueta. ¿Para qué sirve el noveno bit?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="21 de 38: Módulo de memoria SDRAM PC-100 de 128 MB" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/021/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 021</span><span>1998</span></span>
+            <span class="carrusel__foto" style="--color:#7a5230"><img data-src="/museo-informatica/images/piezas/021/modulo-800.webp" width="527" height="134" alt="Módulo de memoria verde con ocho chips negros y etiquetas PC-100 128MB y A-415 en el lado izquierdo." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#7a5230">Memoria</span>
+              <h3>Módulo de memoria SDRAM PC-100 de 128 MB</h3>
+              <p class="carrusel__subtitulo">Memoria que sigue el ritmo del reloj</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta los chips negros. ¿Cuántos hay?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="22 de 38: Módulo de memoria SDRAM takeMS PC-133 de 256 MB" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/022/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 022</span><span>2008</span></span>
+            <span class="carrusel__foto" style="--color:#7a5230"><img data-src="/museo-informatica/images/piezas/022/modulo-800.webp" width="496" height="123" alt="Módulo de memoria verde con etiqueta blanca takeMS 256MB SD 133 CL3, la palabra ERR escrita a mano y una etiqueta con código de barras." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#7a5230">Memoria</span>
+              <h3>Módulo de memoria SDRAM takeMS PC-133 de 256 MB</h3>
+              <p class="carrusel__subtitulo">Un repuesto marcado con «ERR»</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la fecha en la etiqueta de takeMS. ¿Qué pone?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="23 de 38: ExpertColor DSV3868P" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/023/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 023</span><span>1995</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/023/tarjeta-800.webp" width="405" height="234" alt="Tarjeta gráfica PCI verde ExpertColor DSV3868P con el chip S3 Vision868 en el centro y un conector VGA en el soporte." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>ExpertColor DSV3868P</h3>
+              <p class="carrusel__subtitulo">Aceleración 2D y vídeo para Windows 95</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca los dos zócalos vacíos. ¿Para qué servían?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="24 de 38: Crystal 1280PD con S3 Trio32" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/024/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 024</span><span>1995</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/024/tarjeta-800.webp" width="434" height="309" alt="Tarjeta gráfica PCI verde Crystal 1280PD con un chip S3 en el centro, chips de memoria y zócalos a la derecha y un conector VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Crystal 1280PD con S3 Trio32</h3>
+              <p class="carrusel__subtitulo">Tres funciones en un solo chip</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el chip con el logotipo S3. ¿Qué modelo es?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="25 de 38: ExpertColor DSP3364P con S3 Trio64" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/025/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 025</span><span>1996</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/025/tarjeta-800.webp" width="400" height="337" alt="Tarjeta gráfica PCI verde con la etiqueta ExpertColor sobre el chip principal, dos chips de memoria arriba y un conector VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>ExpertColor DSP3364P con S3 Trio64</h3>
+              <p class="carrusel__subtitulo">Uno de los chips gráficos de Windows 95</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la etiqueta con el modelo de la tarjeta. ¿Qué pone?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="26 de 38: Matrox Millennium MGA-2064W" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/026/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 026</span><span>1996</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/026/tarjeta-800.webp" width="460" height="318" alt="Tarjeta gráfica PCI verde Matrox Millennium con dos conectores en el soporte, chips de memoria y el procesador MGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Matrox Millennium MGA-2064W</h3>
+              <p class="carrusel__subtitulo">La referencia en calidad de imagen 2D</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el chip con la palabra «VIDEO». ¿De qué fabricante es?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="27 de 38: ATI Rage 128 Pro AGP" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/027/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 027</span><span>1999–2000</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/027/tarjeta-800.webp" width="483" height="329" alt="Tarjeta gráfica AGP verde ATI Rage 128 Pro con disipador negro sin ventilador, cuatro chips de memoria y un conector VGA azul." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>ATI Rage 128 Pro AGP</h3>
+              <p class="carrusel__subtitulo">La generación de ATI anterior a las Radeon</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿Tiene ventilador esta tarjeta?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="28 de 38: S3 Savage4 AGP" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/028/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 028</span><span>1999–2000</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/028/tarjeta-800.webp" width="414" height="321" alt="Tarjeta gráfica AGP de color ocre DH-Savage4 con disipador negro, chips de memoria, una etiqueta holográfica y conector VGA azul." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>S3 Savage4 AGP</h3>
+              <p class="carrusel__subtitulo">La tarjeta que comprimía las texturas</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la etiqueta brillante. ¿Qué chip cubre?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="29 de 38: Tarjeta gráfica AGP de placa azul" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/029/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 029</span><span>Hacia 2002</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/029/tarjeta-800.webp" width="421" height="253" alt="Tarjeta gráfica AGP de placa azul con disipador negro, chips de memoria, un chip AMIC y conector VGA azul." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>Tarjeta gráfica AGP de placa azul</h3>
+              <p class="carrusel__subtitulo">Una tarjeta sin marca fechada por su BIOS</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿Qué color tiene la placa? ¿Cuál era el habitual?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="30 de 38: ATI Radeon serie 9000 AGP" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/030/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 030</span><span>2003–2004</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/030/tarjeta-800.webp" width="407" height="299" alt="Tarjeta gráfica AGP roja ATI Radeon con ventilador plateado, chips de memoria y conectores DVI, S-Video y VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>ATI Radeon serie 9000 AGP</h3>
+              <p class="carrusel__subtitulo">VGA, DVI y televisión en la misma tarjeta</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta las salidas de vídeo del soporte. ¿Para qué sirve cada una?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="31 de 38: ATI Radeon 9200/9250 AGP" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/031/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 031</span><span>2003–2004</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/031/tarjeta-800.webp" width="447" height="268" alt="Tarjeta gráfica AGP roja con ventilador central, chips de memoria a la derecha y conectores S-Video, DVI y VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>ATI Radeon 9200/9250 AGP</h3>
+              <p class="carrusel__subtitulo">Una actualización habitual en la era Windows XP</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> ¿En qué orden están las salidas del soporte?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="32 de 38: NVIDIA GeForce FX 5500 AGP" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/032/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 032</span><span>2004–2005</span></span>
+            <span class="carrusel__foto" style="--color:#9c36b5"><img data-src="/museo-informatica/images/piezas/032/tarjeta-800.webp" width="416" height="311" alt="Tarjeta gráfica AGP negra con disipador plateado FX 5500-8X, ventilador transparente y conectores DVI, S-Video y VGA." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#9c36b5">Tarjetas gráficas</span>
+              <h3>NVIDIA GeForce FX 5500 AGP</h3>
+              <p class="carrusel__subtitulo">Shaders programables a bajo coste</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Lee la inscripción del disipador. ¿Qué pone?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="33 de 38: Disco duro Seagate Medalist ST32531A" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/033/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 033</span><span>1997</span></span>
+            <span class="carrusel__foto" style="--color:#0c8599"><img data-src="/museo-informatica/images/piezas/033/disco-800.webp" width="346" height="371" alt="Disco duro Seagate Medalist con cubierta negra, etiqueta ST32531A y adaptadores metálicos a los lados." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#0c8599">Almacenamiento</span>
+              <h3>Disco duro Seagate Medalist ST32531A</h3>
+              <p class="carrusel__subtitulo">2,55 GB para la era de Windows 95</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca en la etiqueta la geometría del disco. ¿Cuántos cabezales tiene?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="34 de 38: Advantech PCL-718 REV. B1" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/034/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 034</span><span>Años 80 y 90</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/034/tarjeta-800.webp" width="625" height="235" alt="Tarjeta ISA larga Advantech PCL-718 con muchos chips, un cable plano multicolor, interruptores azules y un módulo plateado Universal." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Advantech PCL-718 REV. B1</h3>
+              <p class="carrusel__subtitulo">El PC conectado a sensores y máquinas</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el módulo plateado con la palabra «Universal». ¿Qué es?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="35 de 38: Adaptec AVA-1502E" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/035/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 035</span><span>1996</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/035/tarjeta-800.webp" width="484" height="340" alt="Tarjeta ISA verde Adaptec AVA-1502E con un chip cuadrado en el centro, jumpers a la izquierda y un conector DB-25 en el soporte." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Adaptec AVA-1502E</h3>
+              <p class="carrusel__subtitulo">Una controladora SCSI marcada con «zip»</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la palabra escrita en el soporte. ¿Qué pone?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="36 de 38: AIMS Lab Video Highway Xtreme" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/036/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 036</span><span>1997–1998</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/036/tarjeta-800.webp" width="351" height="311" alt="Tarjeta PCI verde con una caja metálica etiquetada Xtreme, un chip Brooktree y varios conectores en el soporte, uno de ellos amarillo." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>AIMS Lab Video Highway Xtreme</h3>
+              <p class="carrusel__subtitulo">Ver la tele en el ordenador</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca la norma de TV marcada en la etiqueta. ¿Cuál es?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="37 de 38: Módem OvisLink 56K V.90 PCI" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/037/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 037</span><span>2000</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/037/tarjeta-800.webp" width="366" height="242" alt="Tarjeta PCI verde OvisLink con dos tomas telefónicas en el soporte, un transformador amarillo, un chip Conexant y un zumbador negro." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>Módem OvisLink 56K V.90 PCI</h3>
+              <p class="carrusel__subtitulo">Internet por la línea de teléfono</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Cuenta las tomas del soporte. ¿Para qué es cada una?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div><div class="carrusel__pieza" role="group" aria-roledescription="pieza" aria-label="38 de 38: KWorld TV878RF" aria-hidden="true" inert>
+          <a class="carrusel__enlace" href="/museo-informatica/038/">
+            <span class="carrusel__rotulo"><span class="pieza-id">Pieza 038</span><span>2004</span></span>
+            <span class="carrusel__foto" style="--color:#d6336c"><img data-src="/museo-informatica/images/piezas/038/tarjeta-800.webp" width="367" height="281" alt="Tarjeta PCI verde con una caja metálica rotulada KWORLD, un chip Conexant y conectores de antena y vídeo en el soporte." decoding="async"></span>
+            <span class="carrusel__pie">
+              <span class="carrusel__coleccion" style="--color:#d6336c">Tarjetas de expansión</span>
+              <h3>KWorld TV878RF</h3>
+              <p class="carrusel__subtitulo">Televisión y captura de vídeo en PCI</p>
+              <p class="carrusel__reto"><strong>Reto:</strong> Busca el chip principal. ¿Qué fabricante aparece?</p>
+              <span class="carrusel__ir">Ver la ficha</span>
+            </span>
+          </a>
+        </div></div>
+        <div class="carrusel__controles" hidden>
+          <button type="button" class="carrusel__flecha" data-paso="-1" aria-label="Pieza anterior" aria-keyshortcuts="ArrowLeft">←</button>
+          <p class="carrusel__contador" aria-live="polite">Pieza <span class="carrusel__actual">001</span>/038</p>
+          <button type="button" class="carrusel__flecha" data-paso="1" aria-label="Pieza siguiente" aria-keyshortcuts="ArrowRight">→</button>
+        </div>
+      </section>
     </section>
-    <section class="inicio-colecciones" aria-labelledby="t-explorar">
-      <div class="inicio-colecciones__cabecera"><h2 id="t-explorar">¿Por dónde quieres empezar?</h2><a href="/museo-informatica/coleccion/">Ver las 38 piezas</a></div>
-      <div class="inicio-accesos"><a class="inicio-acceso" href="/museo-informatica/coleccion/?coleccion=Ordenadores">
-          <div class="inicio-acceso__foto"><img class="" style="--giro-foto:0deg" src="/museo-informatica/images/piezas/001/frontal-800.webp" srcset="/museo-informatica/images/piezas/001/frontal-800.webp 800w, /museo-informatica/images/piezas/001/frontal-1400.webp 1400w" sizes="(min-width: 760px) 330px, 120px" width="1400" height="1288" alt="IBM PC 5150 encendido, con el monitor de fósforo verde sobre la unidad central y el teclado delante." loading="lazy" decoding="async"></div>
-          <div><h3>Ordenadores</h3><p>El equipo completo: pantalla, teclado y unidad central.</p></div>
-        </a><a class="inicio-acceso" href="/museo-informatica/coleccion/?coleccion=Placas base">
-          <div class="inicio-acceso__foto"><img class="" style="--giro-foto:0deg" src="/museo-informatica/images/piezas/008/placa-800.webp" srcset="/museo-informatica/images/piezas/008/placa-800.webp 800w, /museo-informatica/images/piezas/008/placa-1400.webp 1400w" sizes="(min-width: 760px) 330px, 120px" width="1400" height="1094" alt="Placa base con un procesador Intel Pentium, cuatro ranuras PCI blancas, cuatro ISA y cuatro zócalos de memoria." loading="lazy" decoding="async"></div>
-          <div><h3>Placas base</h3><p>Las placas que conectan las piezas del ordenador.</p></div>
-        </a><a class="inicio-acceso" href="/museo-informatica/coleccion/?coleccion=Almacenamiento">
-          <div class="inicio-acceso__foto"><img class="" style="--giro-foto:0deg" src="/museo-informatica/images/piezas/003/arriba-800.webp" srcset="/museo-informatica/images/piezas/003/arriba-800.webp 800w, /museo-informatica/images/piezas/003/arriba-1400.webp 1400w" sizes="(min-width: 760px) 330px, 120px" width="1400" height="1905" alt="Disco duro NEC D5146H visto desde arriba, con un aviso amarillo, etiquetas de NCR y NEC y una tabla en blanco para anotar sectores defectuosos." loading="lazy" decoding="async"></div>
-          <div><h3>Almacenamiento</h3><p>Discos y grabadoras: distintas formas de guardar tus archivos.</p></div>
-        </a></div>
-    </section>
-  </main>
-  <footer class="pie" aria-label="Pie del museo">
+  </main><footer class="pie" aria-label="Pie del museo">
       <div class="pie__interior">
         <div class="pie__principal">
           <a class="pie__marca" href="/museo-informatica/"><img src="/museo-informatica/assets/favicon.svg?v=57c0806d83" width="36" height="36" alt=""><span>Museo de Informática S8A</span></a>

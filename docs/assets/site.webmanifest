@@ -1,29 +1,29 @@
 {
-  "id": "/museo-informatica/",
+  "id": "/",
   "name": "Museo de Informática S8A",
   "short_name": "Museo S8A",
   "lang": "es",
-  "start_url": "/museo-informatica/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#f4f5f8",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/museo-informatica/assets/android-chrome-192x192.png?v=b90afe0557",
+      "src": "/assets/android-chrome-192x192.png?v=b90afe0557",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/museo-informatica/assets/android-chrome-512x512.png?v=72d04832ae",
+      "src": "/assets/android-chrome-512x512.png?v=72d04832ae",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/museo-informatica/assets/android-maskable-512x512.png?v=f7810223d0",
+      "src": "/assets/android-maskable-512x512.png?v=f7810223d0",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "scope": "/museo-informatica/"
+  "scope": "/"
 }

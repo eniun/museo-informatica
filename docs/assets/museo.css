@@ -1708,3 +1708,4 @@ html { scrollbar-gutter: stable; }
 .buscar-campo:focus-within .prompt__cursor,
 .busqueda__form:focus-within::after { animation: none; }
 @media (max-width: 599px) { .panel__epoca { display: none; } }
+.donante { margin: 2.4rem 0 0; padding: 0.9rem 1.1rem; border: 1px solid #b9b2a2; border-bottom: 5px solid #8f897b; border-radius: var(--radio-sm); background: #ebe5d6; color: #2c2c2a; line-height: 1.5; }
